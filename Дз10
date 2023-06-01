@@ -1,0 +1,52 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNnD25xKvoqSktL52qNkMlZ"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "WCJhWFZVnhq4"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "import random\n",
+        "lst = ['robot'] * 10\n",
+        "lst += ['human'] * 10\n",
+        "random.shuffle(lst)\n",
+        "res = []\n",
+        "res1 = []\n",
+        "i = 0\n",
+        "while i < 20:\n",
+        "  if lst[i] == 'robot':\n",
+        "    res.append('1')\n",
+        "  else: \n",
+        "    res.append('0')\n",
+        "  i+=1\n",
+        "i = 0\n",
+        "while i < 20:\n",
+        "  if lst[i] == 'human':\n",
+        "    res1.append('1')\n",
+        "  else: \n",
+        "    res1.append('0')\n",
+        "  i+=1\n",
+        "data = pd.DataFrame({'whoAmI':lst,'robot':res,'human':res1})\n",
+        "data.head(20)\n"
+      ]
+    }
+  ]
+}
